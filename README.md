@@ -72,6 +72,10 @@ Do thời gian có hạn, nên chúng em còn chưa kịp bổ sung nhiều ch�
 * Hỗ trợ chat giữa 2 người chơi.
 * Tính năng mời người chơi, và nhiều ván cờ song song.
 
+## Link Slide
+
+https://drive.google.com/drive/folders/1LHVqeGI1UMGouuPZcGJSPsogHbfDDXv_
+
 ## Thank you!
 
 
