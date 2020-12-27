@@ -359,7 +359,6 @@ class Play extends React.Component {
   checkExpandMap = (point) => {
     let { x, y } = this.state;
 
-    console.log("play:", point, x);
     // check left first
     if (point.x === x[0]) {
       // open map to the left
@@ -388,12 +387,81 @@ class Play extends React.Component {
     const { x, y, play, currentPlayer, players } = this.state;
     const { playerName } = this.props;
     let friend = players.find((p) => p !== playerName);
+
     return (
       <div className="container">
         <div className={"header"}>
           <div className={"players flex"}>
-            <div className={"you"}>{playerName}</div>
-            {friend && <div className={"friend"}>{friend}</div>}
+            <div className={"you"}>
+              <div className="player-icon">
+                {me === 0 ? (
+                  <span
+                    style={{
+                      color: "rgb(87,166,187)",
+                      fontWeight: 700,
+                    }}
+                    className="material-icons"
+                  >
+                    radio_button_unchecked
+                  </span>
+                ) : (
+                  <span
+                    style={{
+                      fontSize: 34,
+                      fontWeight: 700,
+                      color: "rgb(77,137,206)",
+                    }}
+                    className="material-icons"
+                  >
+                    close
+                  </span>
+                )}
+              </div>
+              <div
+                className="player-name"
+                style={{
+                  color: me === 0 ? "rgb(87,166,187)" : "rgb(77,137,206)",
+                }}
+              >
+                {playerName}
+              </div>
+            </div>
+            {friend && (
+              <div className={"friend"}>
+                <div className="player-icon">
+                  {me === 0 ? (
+                    <span
+                      style={{
+                        fontSize: 34,
+                        fontWeight: 700,
+                        color: "rgb(87,166,187)",
+                      }}
+                      className="material-icons"
+                    >
+                      close
+                    </span>
+                  ) : (
+                    <span
+                      style={{
+                        color: me === 0 ? "rgb(77,137,206)" : "rgb(87,166,187)",
+                        fontWeight: 700,
+                      }}
+                      className="material-icons"
+                    >
+                      radio_button_unchecked
+                    </span>
+                  )}
+                </div>
+                <div
+                  className="player-name"
+                  style={{
+                    color: me === 0 ? "rgb(77,137,206)" : "rgb(87,166,187)",
+                  }}
+                >
+                  {friend}
+                </div>
+              </div>
+            )}
           </div>
         </div>
         <div className="table">
@@ -401,7 +469,7 @@ class Play extends React.Component {
             <tbody>
               {y.map((yValue, xIndex) => {
                 let rowClass = "table-row";
-                if (xIndex === x.length - 1) {
+                if (yValue === y[y.length - 1]) {
                   rowClass = "table-row last-row";
                 }
                 return (
@@ -453,13 +521,23 @@ class Play extends React.Component {
                             <span className="material-icons" />
                           )}
                           {play[key] === 0 && (
-                            <span className="material-icons">
+                            <span
+                              style={{
+                                color: "rgb(87,166,187)",
+                                fontWeight: 800,
+                              }}
+                              className="material-icons"
+                            >
                               radio_button_unchecked
                             </span>
                           )}
                           {play[key] === 1 && (
                             <span
-                              style={{ fontSize: 34 }}
+                              style={{
+                                fontSize: 34,
+                                fontWeight: 800,
+                                color: "rgb(77,137,206)",
+                              }}
                               className="material-icons"
                             >
                               close

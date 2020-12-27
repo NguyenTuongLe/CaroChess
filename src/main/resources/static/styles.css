@@ -79,4 +79,28 @@ table tr.table-row.last-row td {
   min-width: 450px;
 }
 
+.players {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.players .player-icon {
+  font-weight: 700;
+  height: 40px;
+}
+.players .player-name {
+  margin-top: 3px;
+  font-weight: 600;
+  font-size: 20px;
+}
+.players .you {
+  min-width: 300px;
+  text-align: center;
+}
+.players .friend {
+  min-width: 300px;
+}
+
 /*# sourceMappingURL=styles.css.map */

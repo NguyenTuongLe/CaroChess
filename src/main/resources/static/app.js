@@ -311,9 +311,8 @@ var Play = function (_React$Component) {
           x = _this2$state5.x,
           y = _this2$state5.y;
 
-
-      console.log("play:", point, x);
       // check left first
+
       if (point.x === x[0]) {
         // open map to the left
         var minX = x[0];
@@ -439,6 +438,7 @@ var Play = function (_React$Component) {
       var friend = players.find(function (p) {
         return p !== playerName;
       });
+
       return React.createElement(
         "div",
         { className: "container" },
@@ -451,12 +451,82 @@ var Play = function (_React$Component) {
             React.createElement(
               "div",
               { className: "you" },
-              playerName
+              React.createElement(
+                "div",
+                { className: "player-icon" },
+                me === 0 ? React.createElement(
+                  "span",
+                  {
+                    style: {
+                      color: "rgb(87,166,187)",
+                      fontWeight: 700
+                    },
+                    className: "material-icons"
+                  },
+                  "radio_button_unchecked"
+                ) : React.createElement(
+                  "span",
+                  {
+                    style: {
+                      fontSize: 34,
+                      fontWeight: 700,
+                      color: "rgb(77,137,206)"
+                    },
+                    className: "material-icons"
+                  },
+                  "close"
+                )
+              ),
+              React.createElement(
+                "div",
+                {
+                  className: "player-name",
+                  style: {
+                    color: me === 0 ? "rgb(87,166,187)" : "rgb(77,137,206)"
+                  }
+                },
+                playerName
+              )
             ),
             friend && React.createElement(
               "div",
               { className: "friend" },
-              friend
+              React.createElement(
+                "div",
+                { className: "player-icon" },
+                me === 0 ? React.createElement(
+                  "span",
+                  {
+                    style: {
+                      fontSize: 34,
+                      fontWeight: 700,
+                      color: "rgb(87,166,187)"
+                    },
+                    className: "material-icons"
+                  },
+                  "close"
+                ) : React.createElement(
+                  "span",
+                  {
+                    style: {
+                      color: me === 0 ? "rgb(77,137,206)" : "rgb(87,166,187)",
+                      fontWeight: 700
+                    },
+                    className: "material-icons"
+                  },
+                  "radio_button_unchecked"
+                )
+              ),
+              React.createElement(
+                "div",
+                {
+                  className: "player-name",
+                  style: {
+                    color: me === 0 ? "rgb(77,137,206)" : "rgb(87,166,187)"
+                  }
+                },
+                friend
+              )
             )
           )
         ),
@@ -471,7 +541,7 @@ var Play = function (_React$Component) {
               null,
               y.map(function (yValue, xIndex) {
                 var rowClass = "table-row";
-                if (xIndex === x.length - 1) {
+                if (yValue === y[y.length - 1]) {
                   rowClass = "table-row last-row";
                 }
                 return React.createElement(
@@ -517,13 +587,23 @@ var Play = function (_React$Component) {
                       typeof play[key] === "undefined" && React.createElement("span", { className: "material-icons" }),
                       play[key] === 0 && React.createElement(
                         "span",
-                        { className: "material-icons" },
+                        {
+                          style: {
+                            color: "rgb(87,166,187)",
+                            fontWeight: 800
+                          },
+                          className: "material-icons"
+                        },
                         "radio_button_unchecked"
                       ),
                       play[key] === 1 && React.createElement(
                         "span",
                         {
-                          style: { fontSize: 34 },
+                          style: {
+                            fontSize: 34,
+                            fontWeight: 800,
+                            color: "rgb(77,137,206)"
+                          },
                           className: "material-icons"
                         },
                         "close"

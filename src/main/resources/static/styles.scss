@@ -1,6 +1,7 @@
 dialog {
   position: absolute;
-  left: 0; right: 0;
+  left: 0;
+  right: 0;
   width: -moz-fit-content;
   width: -webkit-fit-content;
   width: fit-content;
@@ -21,13 +22,19 @@ dialog:not([open]) {
 
 dialog + .backdrop {
   position: fixed;
-  top: 0; right: 0; bottom: 0; left: 0;
-  background: rgba(0,0,0,0.5);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 ._dialog_overlay {
   position: fixed;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 dialog.fixed {
@@ -35,37 +42,69 @@ dialog.fixed {
   top: 50%;
   transform: translate(0, -50%);
 }
-.container{
+
+.container {
   max-width: 1200px;
   margin: 0 auto;
 }
-.table{
+
+.table {
   padding: 30px 0;
   display: flex;
   justify-content: center;
 }
-table{
+
+table {
   border-collapse: collapse;
-  td{
-    border-left: 2px solid rgb(221,221,221);
-    border-bottom: 2px solid rgb(221,221,221);
+
+  td {
+    border-left: 2px solid rgb(221, 221, 221);
+    border-bottom: 2px solid rgb(221, 221, 221);
     width: 45px;
     height: 45px;
     text-align: center;
     cursor: pointer;
-    &:first-child{
+
+    &:first-child {
       border-left: 0 none;
     }
-    &.not-allow{
+
+    &.not-allow {
       cursor: not-allowed;
     }
   }
-  tr.table-row.last-row{
-    td{
+
+  tr.table-row.last-row {
+    td {
       border-bottom: 0 none;
     }
   }
 }
-#register-dialog{
+
+#register-dialog {
   min-width: 450px;
+}
+
+.players {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .player-icon {
+    font-weight: 700;
+    height: 40px;
+  }
+  .player-name {
+    margin-top: 3px;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  .you{
+    min-width: 300px;
+    text-align: center;
+  }
+  .friend{
+    min-width: 300px;
+  }
 }
