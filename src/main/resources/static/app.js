@@ -448,7 +448,7 @@ var Play = function (_React$Component) {
           React.createElement(
             "div",
             { className: "players flex" },
-            React.createElement(
+            playerName && React.createElement(
               "div",
               { className: "you" },
               React.createElement(

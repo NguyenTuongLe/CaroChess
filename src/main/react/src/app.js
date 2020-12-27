@@ -392,40 +392,42 @@ class Play extends React.Component {
       <div className="container">
         <div className={"header"}>
           <div className={"players flex"}>
-            <div className={"you"}>
-              <div className="player-icon">
-                {me === 0 ? (
-                  <span
-                    style={{
-                      color: "rgb(87,166,187)",
-                      fontWeight: 700,
-                    }}
-                    className="material-icons"
-                  >
-                    radio_button_unchecked
-                  </span>
-                ) : (
-                  <span
-                    style={{
-                      fontSize: 34,
-                      fontWeight: 700,
-                      color: "rgb(77,137,206)",
-                    }}
-                    className="material-icons"
-                  >
-                    close
-                  </span>
-                )}
+            {playerName && (
+              <div className={"you"}>
+                <div className="player-icon">
+                  {me === 0 ? (
+                    <span
+                      style={{
+                        color: "rgb(87,166,187)",
+                        fontWeight: 700,
+                      }}
+                      className="material-icons"
+                    >
+                      radio_button_unchecked
+                    </span>
+                  ) : (
+                    <span
+                      style={{
+                        fontSize: 34,
+                        fontWeight: 700,
+                        color: "rgb(77,137,206)",
+                      }}
+                      className="material-icons"
+                    >
+                      close
+                    </span>
+                  )}
+                </div>
+                <div
+                  className="player-name"
+                  style={{
+                    color: me === 0 ? "rgb(87,166,187)" : "rgb(77,137,206)",
+                  }}
+                >
+                  {playerName}
+                </div>
               </div>
-              <div
-                className="player-name"
-                style={{
-                  color: me === 0 ? "rgb(87,166,187)" : "rgb(77,137,206)",
-                }}
-              >
-                {playerName}
-              </div>
-            </div>
+            )}
             {friend && (
               <div className={"friend"}>
                 <div className="player-icon">
