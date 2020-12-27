@@ -74,7 +74,7 @@ Do thời gian có hạn, nên chúng em còn chưa kịp bổ sung nhiều ch�
 
 ## Link Slide
 
-https://drive.google.com/drive/folders/1LHVqeGI1UMGouuPZcGJSPsogHbfDDXv_
+https://drive.google.com/drive/u/0/folders/1GSDdW4FlK0QoaimiBmh5K7qxFgAMtYH6
 
 ## Thank you!
 
