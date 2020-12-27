@@ -62,7 +62,7 @@ Sau mỗi nước cờ đi, hệ thống sẽ được tính toán thắng tại
 
 
 ## Ưu điểm
-
+* bàn cờ được tự động mở rộng khi có nước cờ đánh sát biên.
 * Thuật toán kiểm tra thắng thua nhanh, với độ phức tạp O(n), trong đó n là cạnh hình vuông của bàn cờ.
 * Giao diện gọn nhẹ, và tối ưu, bắt mắt.
 
