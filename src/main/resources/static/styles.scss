@@ -1,0 +1,71 @@
+dialog {
+  position: absolute;
+  left: 0; right: 0;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: -webkit-fit-content;
+  height: fit-content;
+  margin: auto;
+  border: solid;
+  padding: 1em;
+  background: white;
+  color: black;
+  display: block;
+}
+
+dialog:not([open]) {
+  display: none;
+}
+
+dialog + .backdrop {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+._dialog_overlay {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+}
+
+dialog.fixed {
+  position: fixed;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.table{
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+}
+table{
+  border-collapse: collapse;
+  td{
+    border-left: 2px solid rgb(221,221,221);
+    border-bottom: 2px solid rgb(221,221,221);
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    cursor: pointer;
+    &:first-child{
+      border-left: 0 none;
+    }
+    &.not-allow{
+      cursor: not-allowed;
+    }
+  }
+  tr.table-row.last-row{
+    td{
+      border-bottom: 0 none;
+    }
+  }
+}
+#register-dialog{
+  min-width: 450px;
+}
